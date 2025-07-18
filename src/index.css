@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Web3 Design System for Fee.io Domain Sale
+High contrast, sophisticated typography, strategic color palette
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* High-contrast base colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3%;
+
+    /* Card system for premium sections */
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 3%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3%;
+
+    /* Primary brand - deep black for authority */
+    --primary: 0 0% 3%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary for subtle accents */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+
+    /* Muted for supporting text */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent for highlights and CTAs */
+    --accent: 0 0% 4%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Success color for pricing - bold green */
+    --success: 120 61% 34%;
+    --success-foreground: 0 0% 98%;
+
+    /* Premium gold accent for high-value elements */
+    --premium: 45 93% 58%;
+    --premium-foreground: 0 0% 3%;
+
+    /* Borders and inputs */
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 0 0% 3%;
+
+    --radius: 0.75rem;
+
+    /* Typography scale */
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Spacing scale for premium layout - mobile optimized */
+    --space-hero: 4rem;
+    --space-section: 3rem;
+    --space-content: 2rem;
+
+    /* Animation easing */
+    --ease-premium: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(0 0% 15%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(var(--premium)) 0%, hsl(45 100% 85%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+
+    /* Shadows for depth */
+    --shadow-premium: 0 20px 60px -10px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--premium) / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  /* Premium typography classes - mobile optimized */
+  .text-display-xl {
+    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight;
+    font-family: var(--font-display);
+    line-height: 0.9;
+  }
+
+  .text-display-lg {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight;
+    font-family: var(--font-display);
+    line-height: 1.1;
+  }
+
+  .text-display-md {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
+    font-family: var(--font-display);
+    line-height: 1.2;
+  }
+
+  .text-body-xl {
+    @apply text-lg sm:text-xl md:text-2xl leading-relaxed;
+    font-family: var(--font-body);
+  }
+
+  .text-body-lg {
+    @apply text-base sm:text-lg md:text-xl leading-relaxed;
+    font-family: var(--font-body);
+  }
+
+  /* Premium animations */
+  .animate-fade-up {
+    animation: fadeUp 0.8s var(--ease-premium) forwards;
+  }
+
+  .animate-fade-up-delay {
+    animation: fadeUp 0.8s var(--ease-premium) 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1s var(--ease-premium) forwards;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Premium button variants - mobile optimized */
+  .btn-premium {
+    @apply inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-lg;
+    @apply bg-primary text-primary-foreground;
+    @apply hover:bg-accent active:scale-95 transition-all duration-300;
+    @apply shadow-lg hover:shadow-xl;
+    @apply min-h-[44px] sm:min-h-[48px]; /* Minimum touch target size */
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    touch-action: manipulation; /* Improves tap responsiveness */
+  }
+
+  .btn-outline-premium {
+    @apply inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-lg;
+    @apply border-2 border-primary text-primary bg-transparent;
+    @apply hover:bg-primary hover:text-primary-foreground active:scale-95;
+    @apply transition-all duration-300;
+    @apply min-h-[44px] sm:min-h-[48px]; /* Minimum touch target size */
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    touch-action: manipulation;
+  }
+
+  /* Premium sections */
+  .section-hero {
+    min-height: 100vh;
+    padding-top: var(--space-hero);
+    padding-bottom: var(--space-hero);
+  }
+
+  .section-premium {
+    padding-top: var(--space-section);
+    padding-bottom: var(--space-section);
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-premium {
+    background: var(--gradient-premium);
+  }
+
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  /* Premium shadows */
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .shadow-card-premium {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  /* Animation keyframes */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(60px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes glow {
+    from {
+      filter: drop-shadow(0 0 20px hsl(var(--premium) / 0.5));
+    }
+    to {
+      filter: drop-shadow(0 0 40px hsl(var(--premium) / 0.8));
+    }
+  }
+
+  /* Spacing utilities */
+  .space-hero {
+    padding-top: var(--space-hero);
+    padding-bottom: var(--space-hero);
+  }
+
+  .space-section {
+    padding-top: var(--space-section);
+    padding-bottom: var(--space-section);
+  }
+
+  .space-content {
+    padding-top: var(--space-content);
+    padding-bottom: var(--space-content);
+  }
+}
