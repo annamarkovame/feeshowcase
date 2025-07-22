@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 
 const HeroSection = () => {
   const handleContactClick = () => {
-    window.location.href = "mailto:hello@fee.io?subject=Request to Acquire Fee.io&body=Hi, I'm interested in acquiring Fee.io for $500,000. Please provide more details about the acquisition process and next steps.";
+    window.location.href = "mailto:natalydomainbroker@gmail.com?subject=Request to Acquire Fee.io&body=Hi, I'm interested in acquiring Fee.io for $500,000. Please provide more details about the acquisition process and next steps.";
   };
 
   return (
